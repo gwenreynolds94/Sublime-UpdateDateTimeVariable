@@ -1,0 +1,19 @@
+[
+  { "caption": "Preferences: UpdateDateTimeVariable",
+    "command": "edit_settings",
+    "args": {
+      "base_file": "${packages}/UpdateDateTimeVariable/UpdateDateTimeVariable.sublime-settings",
+      "default": "{\n\t$0\n}\n"
+    }
+  },
+  { "caption": "Preferences: UpdateDateTimeVariable Key Bindings",
+    "command": "edit_settings",
+    "args": {
+      "base_file": "${packages}/UpdateDateTimeVariable/Default (${platform}).sublime-keymap",
+      "default": "[\n\t$0\n]\n"
+    }
+  },
+  { "caption": "Set UpdateDateTime Project And File",
+  	"command": "set_update_date_time_project_and_file"
+  },
+]

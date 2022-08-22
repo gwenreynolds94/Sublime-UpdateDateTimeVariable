@@ -1,0 +1,90 @@
+	//--------------------------------------------------------------------------
+	//----------------| DEFAULT SETTINGS FOR UPDATETIMEVARIABLE |---------------
+	//--------------------------------------------------------------------------
+{
+	//--------------------------------------------------------------------------
+	//- Set the path to the file containing the line to update
+	//
+	//- You can set the file path and project more easily by using the
+	//-   option in the UpdateDateTimeVariable package settings:
+	//-     "Set Project And File"
+	//-   It will update your user settings using the active project and active
+	//-   file of the current window.
+	//
+	"file_path": "",
+
+	//--------------------------------------------------------------------------
+	//- Set the project for which the plugin will listen to its saves.
+	//- Only needs the name of the project, not the .sublime-project extension.
+	//
+	//- See "file_path" setting description.
+	//
+	"project_to_listen_for": "",
+
+
+	//--------------------------------------------------------------------------
+	//- default: %d-%m-%Y %H:%M:%S
+	//-      eg. 31-12-2022 24:59:59
+	//
+	//- year (2 digits): %y
+	//-      hours (12): %I
+	//-      (am or pm): %p
+	//
+	"datetime_format": "%d-%m-%Y %H:%M:%S",
+
+
+	//--------------------------------------------------------------------------
+	//- DESC
+	//- Describes the format of the text to search for and the specific string
+	//- ... of characters that needs to be replaced within it.
+	//- Double quotes within double quotes in sublime-settings syntax (JSON)
+	//- ... must be escaped with backslashes.
+	//- {@datetime} will insert the formatted datetime determined by
+	//- ... the datetime_format setting (without enclosing quotes).
+	//- {@datetimestr} will insert datetime enclosed in quotes.
+	//
+	//- --------------------------------------------------------
+	//- DEBUG
+	//- If you would like to test which lines are affected and how before
+	//- ... you start saving the changes, you can turn on the "debug" setting.
+	//- ... This won't save any changes and will popup a window showing the
+	//- ... lines that would be affected and what their new values would be.
+	//
+	//- --------------------------------------------------------
+	//- EXAMPLES
+	//::Sample code::
+	//1>dateTime = "foobar"
+	//2>	dateTime = "foo" // a comment
+	//3>  dateTime = bar
+	//:::::::::::::::
+	//
+	//--->format_line
+	//n>affected line(s)
+	//
+	//--->"dateTime = \"{@datetime}\""
+	//1>dateTime = "31-12-2022 23:59:59"
+	//2>	dateTime = "31-12-2022 23:59:59" // a comment
+	//
+	//--->"dateTime = \"{@datetime}\" //"
+	//2>	dateTime = "31-12-2022 23:59:59" // a comment
+	//
+	//--->"dateTime = {@datetimestr}"
+	//1>dateTime = "31-12-2022 23:59:59"
+	//2>	dateTime = "31-12-2022 23:59:59"
+	//3>  dateTime = "31-12-2022 23:59:59"
+	//
+	"line_format": "",
+
+	//--------------------------------------------------------------------------
+	//- true: Match and replace every occurence found using format_line.
+	//- false: Match only the first found occurrence.
+	//
+	"match_multiple": true,
+
+	//--------------------------------------------------------------------------
+	//- DEBUG
+	//- Setting to true will show a popup window instead of updating the script
+	//- The popup displays the lines it would have updated
+	//
+	"debug": false
+}
